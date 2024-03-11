@@ -1,0 +1,68 @@
+<a href="index.html">Home</a>
+  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note Taking App</title>
+    <style>
+        //I googled some basic styling to add to this section
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Saved Notes</h1>
+        <ul id="saved-notes">
+         
+        </ul>
+    </div>
+   
+    <script>
+  
+        const notes = [
+            { id: 1, title: 'Note 1', content: 'This is the content of Note 1.' },
+            { id: 2, title: 'Note 2', content: 'This is the content of Note 2.' },
+            { id: 3, title: 'Note 3', content: 'This is the content of Note 3.' }
+        ];
+
+        // Function to render notes (Googled)
+        function renderNotes() {
+            const notesContainer = document.getElementById('saved-notes');
+            notesContainer.innerHTML = ''; // Clear existing content
+
+            notes.forEach(note => {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `
+                    <h2>${note.title}</h2>
+                    <p>${note.content}</p>
+                `;
+                notesContainer.appendChild(listItem);
+            });
+        }
+
+    
+        document.addEventListener('DOMContentLoaded', renderNotes);
+    </script>
+</body>
+</html>
